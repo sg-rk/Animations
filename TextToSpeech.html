@@ -1,0 +1,38 @@
+<html>
+
+<head>
+    <meta name="keywords" content="HTML, CSS and JAVASCRIPT">
+    <meta name="description" content="TextToSpeech - Webpage workouts">
+    <meta name="author" content="RanjithkumarSG">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text To Speech </title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <div class="" style="display: contents">
+        <div class="speaker-box">
+            <div class="speaker-ele">
+                <textarea class="textInput"></textarea>
+            </div>
+            <div class="speaker-ele speaker">
+                <i class="fa fa-volume-up"></i>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        const text = document.querySelector('.textInput');
+        const speaker = document.querySelector('.speaker');
+        const synth = window.speechSynthesis;
+
+        speaker.addEventListener('click', () => {
+            console.log('rk value ', text.value);
+            const utterance = new SpeechSynthesisUtterance(text.value);
+            synth.speak(utterance);
+        })
+
+    </script>
+</body>
+
+</html>
